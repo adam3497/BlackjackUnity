@@ -47,7 +47,6 @@ public class Game : MonoBehaviour
 
     //private fields
     private int currentCard;
-    private readonly int totalPlayers = 4;
     private List<GameObject> initialCardsToDeal; 
     private const int totalCards = 52;
     private int currentPlayerPosition;
@@ -353,7 +352,8 @@ public class Game : MonoBehaviour
                 if (GetCurrentPlayer(i).IsLocal)
                 {
                     PlayersFields.PlayersCoins[i].text = (GetCurrentPlayer(i).PlayerTotalCoinsInGame + GetCurrentPlayer(i).PlayerInitialBet).ToString();
-                    GetCurrentPlayer(i).PlayerTotalCoinsInGame += GetCurrentPlayer(i).PlayerInitialBet;
+                    //add also the extra gain (if the player bet for blackjack to dealer and won)
+                    GetCurrentPlayer(i).PlayerTotalCoinsInGame += GetCurrentPlayer(i).PlayerInitialBet + (playersExtraGain[i] > 0 ? playersExtraGain[i] : 0);
                 }
             }
             //the player won
@@ -363,7 +363,8 @@ public class Game : MonoBehaviour
                 if (GetCurrentPlayer(i).IsLocal)
                 {
                     PlayersFields.PlayersCoins[i].text = (GetCurrentPlayer(i).PlayerTotalCoinsInGame + gain).ToString();
-                    GetCurrentPlayer(i).PlayerTotalCoinsInGame += gain;
+                    //add also the extra gain (if the player bet for blackjack to dealer and won)
+                    GetCurrentPlayer(i).PlayerTotalCoinsInGame += gain + (playersExtraGain[i] > 0 ? playersExtraGain[i] : 0);
                 }
             }
             i++;
