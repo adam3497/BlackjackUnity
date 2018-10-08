@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour {
         this.btnProfile.GetComponent<Button>().onClick.AddListener(LaunchProfileScreen);
         this.btnExitGame.GetComponent<Button>().onClick.AddListener(ExitGame);
         //troll 2
+        //troll
+
 	}
 	
 	// Update is called once per frame
