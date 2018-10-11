@@ -45,14 +45,14 @@ class Moves : MonoBehaviour
         {
             doubleBetButton.GetComponent<Button>().interactable = true;
         }
-
+        /*
         if (cardsDealed[1].Value == 11 || cardsDealed[1].Value == 10)
         {
             if (playerCoinsLeft > 0)
             {
                 bet21Button.GetComponent<Button>().interactable = true;
             }
-        }
+        }*/
     }
 
     private void DeactivateButtons()
@@ -66,7 +66,7 @@ class Moves : MonoBehaviour
     //Doubles de bet of the player and changes the turn
     public void DoubleBet(int player, string card)
     {
-        int bet = getPlayerBet(player);
+        /*int bet = getPlayerBet(player);
         bet = bet * 2;
         this.playersBets[player].text = "Bet: " + bet.ToString();
         RecieveExtraCard(player, card, false);
@@ -75,7 +75,7 @@ class Moves : MonoBehaviour
             int currentCoins = int.Parse(this.playersCoins[player].text);
             currentCoins = currentCoins - (bet / 2);
             this.playersCoins[player].text = currentCoins.ToString();
-        }
+        }*/
         DeactivateButtons();
     }
 
@@ -84,7 +84,7 @@ class Moves : MonoBehaviour
     //Asks the server for an extra card  
     void AskForExtraCard()
     {
-        this.askForACard.Invoke();
+       // this.askForACard.Invoke();
     }
 
     /*
@@ -93,19 +93,19 @@ class Moves : MonoBehaviour
      */
    public void BetFor21()
     {
-        hideBlackjackBetWindow = true;
+       // hideBlackjackBetWindow = true;
     }
 
     //Asks the server for a new card, double the bet and pass the turn
     public void AskFordoubleBet()
     {
-        this.doubleBetEvent.Invoke();
+        //this.doubleBetEvent.Invoke();
     }
 
     public void PassTurn()
     {
         DeactivateButtons();
-        this.passTurnEvent.Invoke();
+        //this.passTurnEvent.Invoke();
     }
 }
 

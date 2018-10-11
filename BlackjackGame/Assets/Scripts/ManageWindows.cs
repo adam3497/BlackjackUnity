@@ -67,11 +67,11 @@ public class ManageWindows : MonoBehaviour
 
                 if (initialBetValue <= playerCoins)
                 {
-                    PlayersFields.PlayersBets[Player.PlayerPosition].text = "Bet: " + playerInitialBet;
+                    /*PlayersFields.PlayersBets[Player.PlayerPosition].text = "Bet: " + playerInitialBet;
                     PlayersFields.PlayersCoins[Player.PlayerPosition].text = (playerCoins - initialBetValue).ToString();
                     showInitialBetWindow = false;
                     DealCoins(Player.PlayerPosition, initialBetValue);
-                    this.betReady.Invoke(initialBetValue);
+                    this.betReady.Invoke(initialBetValue);*/
                 }
             }
         }
@@ -88,7 +88,7 @@ public class ManageWindows : MonoBehaviour
             //validate if the input is a number
             if (int.TryParse(playerBlackjackBet, out blackjackBet))
             {
-                int playerCoins = int.Parse(playersCoins[this.currentPlayerPosition].text);
+                /*int playerCoins = int.Parse(playersCoins[this.currentPlayerPosition].text);
 
                 if (blackjackBet <= (initialBetValue / 2) && blackjackBet <= int.Parse(this.playersCoins[this.currentPlayerPosition].text))
                 {
@@ -99,7 +99,7 @@ public class ManageWindows : MonoBehaviour
                     this.blackjackBetReady.Invoke(blackjackBet);
                     deactivateButtons();
                     activateButtons();
-                }
+                }*/
             }
         }
     }
@@ -109,11 +109,11 @@ public class ManageWindows : MonoBehaviour
         new Rect(25, 65, 100, 30);
         if (GUI.Button(new Rect(50, 65, 80, 30), "Yes"))
         {
-            this.hideAnotherRoundWindow = true;
+           // this.hideAnotherRoundWindow = true;
         }
         if (GUI.Button(new Rect(300, 65, 80, 30), "No"))
         {
-            this.hideAnotherRoundWindow = true;
+            //this.hideAnotherRoundWindow = true;
         }
     }
 
